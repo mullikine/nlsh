@@ -1,2 +1,16 @@
 * =nlsh= with =rlwrap= and =comint=
 + =nlsh= :: https://gist.github.com/dpoulopoulos/24d52f888988b58c86547a21001422a2
+
+#+BEGIN_SRC emacs-lisp -n :async :results verbatim code
+  (defun comint-quick (cmd)
+    (interactive)
+    (let* ((slug (slugify cmd))
+           (buf (make-comint slug (nsfa cmd))))
+      (with-current-buffer buf
+        (switch-to-buffer buf)
+        (turn-on-comint-history (concat "/home/shane/notes/programs/comint/history/" slug)))))
+  
+  (defun turn-on-comint-history (history-file)
+    (setq comint-input-ring-file-name history-file)
+    (comint-read-input-ring 'silent))
+#+END_SRC
