@@ -1,0 +1,12 @@
+#!/bin/bash
+export TTY
+
+ppid="$(ps -o comm= $PPID)"
+
+export OPENAI_API_KEY="$(myrc .openai_api_key)"
+
+if echo "$INSIDE_EMACS" | grep -q ',comint'; then
+    $SCRIPTS/nlsh.py
+else
+    rlwrap $SCRIPTS/nlsh.py
+fi
