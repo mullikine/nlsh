@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 ogprompt = """
-Operating system: Ubuntu
+Operating system: Arch Linux
 
 Input: Print the current directory
 Output: pwd
