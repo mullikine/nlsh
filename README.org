@@ -1,6 +1,8 @@
 * =nlsh= with =rlwrap= and =comint=
 + =nlsh= :: https://gist.github.com/dpoulopoulos/24d52f888988b58c86547a21001422a2
 
+https://asciinema.org/a/WSxPPpDy0biQM4FVN6GoSTPy6
+
 #+BEGIN_SRC emacs-lisp -n :async :results verbatim code
   (defun comint-quick (cmd)
     (interactive)
